@@ -1,0 +1,51 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/main.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="header">
+        <h1>SISTEMA VUELOS</h1>
+    </div>
+    <div id="menu">
+        @Html.ActionLink("Inicio", "Index", "Home")
+        @Html.ActionLink("Vuelos", "Index", "Vuelo")
+    </div>
+    <main>
+        <div id="sidebar">
+            @if (IsSectionDefined("SideBar"))
+            {
+                @RenderSection("SideBar")
+            }
+            else
+            {
+                <h2>Contactanos!</h2>
+                <br />
+                <p>011-1234-5678</p>
+                <ul>
+                    <li>
+                        <img src="http://c.files.bbci.co.uk/8106/production/_117103033_7d077bb6-c745-42d9-a291-58b1004b4de3.jpg" style="height: 100px; width: 150px"/>
+                    </li>
+                    <li>
+                        <img src="https://www.infobae.com/new-resizer/-A2316fL8cD0N-jGivJH8PNeBOI=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/VPQ3L2VXZVD2JEQRDZBCTW4JAQ.jpg" style="height: 100px; width: 150px"/>
+                    </li>
+                    <li>
+                        <img src="https://www.ecestaticos.com/imagestatic/clipping/126/324/12632425e623080221c891c111450fdf/esta-es-la-razon-por-la-que-viajar-en-avion-te-saldra-mas-caro-y-no-es-estirar-las-piernas.jpg?mtime=1622553619"  style="height: 100px; width: 150px"/>
+                    </li>
+                </ul>
+            }
+        </div>
+            <div id="content">
+                @RenderBody()
+            </div>
+        </main>
+        <div id="footer">
+            <p>info@vuelo.com</p>
+        </div>
+</body>
+</html>

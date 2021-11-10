@@ -1,0 +1,30 @@
+﻿@model SistemaWebVuelos.Models.Vuelo
+
+
+
+<h2>Eliminar vuelo</h2>
+<p>Desea eliminar?</p>
+@using (Html.BeginForm("Delete", "Vuelo", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Vuelo Detail</legend>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Origen)
+        </div>
+        <div class="display-text">
+            @Html.DisplayFor(model => model.Origen)
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Destino)
+        </div>
+        <div class="display-text">
+            @Html.DisplayFor(model => model.Destino)
+        </div>
+    </fieldset>
+    <p>
+        <input type="submit" value="Si" />
+    </p>
+}
+<p>
+    @Html.ActionLink("Volver a Index", "Index", "Vuelo")
+</p>

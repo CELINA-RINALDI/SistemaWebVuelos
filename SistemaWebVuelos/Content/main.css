@@ -1,0 +1,50 @@
+﻿body {
+
+}
+
+#header {
+    background-color: #293B5F;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+#menu {
+    background-color: #47597E; 
+    font-family:Calibri; 
+    height: 30px;
+    text-align: center; 
+}
+#content {
+    background-color: #DBE6FD;
+    color: black;
+    font-family: Calibri;
+    text-align: -webkit-center;
+    height: 675px;
+ 
+}
+#sidebar {
+    background-color: #3D56B2;
+    padding: 10px;
+    float: left;
+    height: 675px;
+    font-family:Calibri;
+    text-align:center; 
+    color: white; 
+}
+
+#footer {
+    background-color: #B2AB8C; 
+    color: white;
+    text-align: center; 
+    clear: both; 
+    height: 25px;
+}
+main {
+    height: 300px;
+    display: inline;
+}
+#menu a {
+    color: white;
+
+}

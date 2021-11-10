@@ -1,0 +1,61 @@
+﻿@model IEnumerable<SistemaWebVuelos.Models.Vuelo>
+
+
+<p>@Html.ActionLink("Nuevo", "Create", "Vuelo")</p>
+<p>Busca por destino:</p>
+@using (Html.BeginForm("BuscarPorDestino", "Vuelo", FormMethod.Get))
+{
+    @Html.TextBox("Destino", "")
+
+    <input type="submit" value="Buscar" />
+}
+
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Destino)</th>
+        <th>@Html.DisplayNameFor(model => model.Origen)</th>
+        <th>@Html.DisplayNameFor(model => model.Matricula)</th>
+        <th>@Html.DisplayNameFor(model => model.Fecha)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@Html.DisplayFor(modelItem => item.Destino)</td>
+    <td>@Html.DisplayFor(modelItem => item.Origen)</td>
+    <td>@Html.DisplayFor(modelItem => item.Matricula)</td>
+    <th>@Html.DisplayFor(modelItem => item.Fecha)</th>
+    <td>
+        @Html.ActionLink("Detail", "Detail", new { id = item.Id })
+    </td>
+    <td>
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+    </td>
+</tr>
+    }
+</table>
+
+@section SideBar {
+    <p>¿Ya elegiste a donde vas a ir?</p>
+    <ul>
+        <li>
+            <img src="https://resizer.glanacion.com/resizer/zDhC9SeFAQ1rbJLd72CJJbQbtVM=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/YOXAPNTVJVDV5H6LUEOGI4CHN4.jpg" style="height: 100px; width: 150px" />
+            <p>Miami</p>
+        </li>
+        <li>
+            <img src="https://resizer.glanacion.com/resizer/UOpuo4GSf-6btginv3cat3G3PDE=/1920x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/RGTEIMFAMNBKXCVLO2EEUTH3SY.jpg" style="height: 100px; width: 150px"/>
+            <p>New York</p>
+        </li>
+        <li>
+            <img src="https://media.staticontent.com/media/pictures/ecc404e8-9a99-46b0-a56a-ead992b5166e"  style="height: 100px; width: 150px"/>
+            <p>San Andres</p>
+        </li>
+        <li>
+            <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_900,q_75,w_1700/v1/clients/quintanaroo/832535769_640_ab158263-5eb9-4ef5-bb5a-9b900f13ac8b.jpg" style="height: 100px; width: 150px"/>
+            <p>Cancun</p>
+        </li>
+    </ul>
+
+}
